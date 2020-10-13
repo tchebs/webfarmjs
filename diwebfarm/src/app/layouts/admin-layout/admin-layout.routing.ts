@@ -7,6 +7,7 @@ import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
+import { ContainerComponent } from 'app/container/container.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -17,5 +18,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    
+    { path: 'container',      component: ContainerComponent},
 ];
