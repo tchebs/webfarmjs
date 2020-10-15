@@ -29,7 +29,7 @@ export class TablesComponent implements OnInit {
           ]
       };
       this.tableData2 = {
-          headerRow: [ 'ID', 'Name',  'Salary', 'Country', 'City' ],
+          headerRow: [ 'ID', 'Name',  'Salary', 'UserRole', 'City', 'Delete User' ],
           dataRows: [
               ['1', 'Dakota Rice','$36,738', 'Niger', 'Oud-Turnhout' ],
               ['2', 'Minerva Hooper', '$23,789', 'Curaçao', 'Sinaai-Waas'],
