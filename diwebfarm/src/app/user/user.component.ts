@@ -14,7 +14,7 @@ import { AdminLayoutRoutes } from 'app/layouts/admin-layout/admin-layout.routing
 export class UserComponent implements OnInit {
   private cedula: string;
   private cedula2: string;
-  responsefromKerberos: string;
+  responsefromKerberos: any;
   name = new FormControl('');
   //login = new FormGroup({
     //name: new FormControl(''),
@@ -28,7 +28,7 @@ export class UserComponent implements OnInit {
 
   smartphone: any = [];
   characterz: any = [];
-  contents: any = [];
+  
   
   
   constructor(private userService: UserService, private http:HttpClient){}
@@ -74,9 +74,11 @@ export class UserComponent implements OnInit {
 
    loadKes()  {
      this.userService.checkKerberos(this.cedula, this.cedula2)
-     .subscribe(x => this.responsefromKerberos)
+     .subscribe(x => this.responsefromKerberos=x)
+     
      
      console.log(this.responsefromKerberos)
+
      return this.responsefromKerberos
   }
 
