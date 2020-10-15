@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserService } from '../service/user.service';
+
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  result$: Observable<any>;
+
+  constructor(private userService: UserService) { 
+    this.result$ = userService.resolveItems();
+  }
 
   ngOnInit() {
   }
 
+  
+
 }
+
+
