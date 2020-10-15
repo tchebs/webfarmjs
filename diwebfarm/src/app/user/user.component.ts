@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
 
   smartphone: any = [];
   characterz: any = [];
+  contents: any = [];
   
   
   constructor(private userService: UserService, private http:HttpClient){}
@@ -71,9 +72,9 @@ export class UserComponent implements OnInit {
       alert(x);       
   }
 
-   loadKes():void{
-    var y = this.userService.checkKerberos(this.cedula, this.cedula2)
-    alert(y);
+   loadKes()  {
+     this.userService.checkKerberos(this.cedula, this.cedula2)
+    .subscribe(results => this.contents = results)
   }
 
   
