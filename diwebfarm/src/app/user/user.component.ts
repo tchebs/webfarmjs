@@ -14,7 +14,7 @@ import { AdminLayoutRoutes } from 'app/layouts/admin-layout/admin-layout.routing
 export class UserComponent implements OnInit {
   private cedula: string;
   private cedula2: string;
-  responseStatus: number;
+  responsefromKerberos: string;
   name = new FormControl('');
   //login = new FormGroup({
     //name: new FormControl(''),
@@ -74,8 +74,8 @@ export class UserComponent implements OnInit {
 
    loadKes()  {
      this.userService.checkKerberos(this.cedula, this.cedula2)
-     .subscribe(x => console.log(x))
-    
+     .subscribe(x => this.responsefromKerberos)
+     
   }
 
   
