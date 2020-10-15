@@ -13,12 +13,13 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ContainerComponent } from './container/container.component';
+import { ReactiveFormsModule } from '@angular/forms'
 import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     NavbarModule,
@@ -30,7 +31,6 @@ import { UserComponent } from './user/user.component';
     AppComponent,
     AdminLayoutComponent,
     ContainerComponent,
-    UserComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
