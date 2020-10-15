@@ -74,7 +74,7 @@ export class UserComponent implements OnInit {
 
    loadKes()  {
      this.userService.checkKerberos(this.cedula, this.cedula2)
-    .subscribe(results => this.contents = results)
+    
   }
 
   
