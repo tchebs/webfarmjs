@@ -23,9 +23,14 @@ export class UserService {
 
   
   checkKerberos(cedula:String, cedula2:String){
-   return this.http.get<string>(`station47:5000/login/${cedula}/${cedula2}`)
+    console.log('before request')   
    
+    var temp = this.http.get<string>(`http://station47:5000/login/${cedula}/${cedula2}`)
     
+    
+    console.log('after request')   
+    
+    return temp
     
   }
 
