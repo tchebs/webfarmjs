@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
     //password: new FormControl(''),
   //});
   loginForm
+  totalAngularPackages
 
   @Input()
   result$: Observable<any>;
@@ -41,7 +42,9 @@ export class UserComponent implements OnInit {
   
 
   ngOnInit() {
-    
+    this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
+      this.totalAngularPackages = data.total;
+  })
   }
 
   onSubmit(logindata) {
@@ -59,15 +62,20 @@ export class UserComponent implements OnInit {
 
   }
 
+  
+
    display(cedula:String, cedula2:string)
   {
       var x="http://localhost:5000/login/"+cedula+"/"+cedula2;
       alert(x);       
   }
 
-  private loadKes():void{
+   loadKes():void{
     this.userService.checkKerberos(this.cedula, this.cedula2)
   }
+
+  
+  
     
 
 }

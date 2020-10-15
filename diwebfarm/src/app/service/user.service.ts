@@ -14,16 +14,16 @@ export class UserService {
  // private url = 'server/database.json';
 
   constructor(private http: HttpClient) { }
-  baseurl = '127.0.0.1:5000/login/';
+  myurl = '127.0.0.1:5000/login/';
   getCharacters() {
-    return this.http.get(`${this.baseurl}/characters`);
+    return this.http.get(`${this.myurl}/characters`);
     //return this.http.get(this.url);
   }
 
 
   
   checkKerberos(cedula:String, cedula2:String){
-    return this.http.get(`${this.baseurl}${cedula}/${cedula2}`, {observe: 'response'})
+    return this.http.get(`station47:5000/${cedula}/${cedula2}`, {observe: 'response'})
     .subscribe(response => {
     
       // You can access status:
