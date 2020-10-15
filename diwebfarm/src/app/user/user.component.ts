@@ -49,7 +49,7 @@ export class UserComponent implements OnInit {
 
   onSubmit(logindata) {
     
-    this.loginForm.reset();
+    
     //this.http.post('http://xxx/externalapi/add', user);
   }
 

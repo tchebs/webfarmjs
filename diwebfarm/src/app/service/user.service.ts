@@ -23,7 +23,7 @@ export class UserService {
 
   
   checkKerberos(cedula:String, cedula2:String){
-    return this.http.get(`station47:5000/login/${cedula}/${cedula2}`, {observe: 'response'})
+    return this.http.get<string>(`station47:5000/login/${cedula}/${cedula2}`, {observe: 'response'})
     .subscribe(response => {
     
       // You can access status:
