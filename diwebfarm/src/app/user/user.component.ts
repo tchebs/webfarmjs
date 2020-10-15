@@ -4,6 +4,7 @@ import { UserService } from '../service/user.service';
 
 import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { AdminLayoutRoutes } from 'app/layouts/admin-layout/admin-layout.routing';
 
 @Component({
   selector: 'app-user',
@@ -71,7 +72,8 @@ export class UserComponent implements OnInit {
   }
 
    loadKes():void{
-    this.userService.checkKerberos(this.cedula, this.cedula2)
+    var y = this.userService.checkKerberos(this.cedula, this.cedula2)
+    alert(y);
   }
 
   
