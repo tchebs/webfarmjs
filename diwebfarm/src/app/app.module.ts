@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ContainerComponent } from './container/container.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { ContainerComponent } from './container/container.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ContainerComponent
+    ContainerComponent,
+    UserComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
