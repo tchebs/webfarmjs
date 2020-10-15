@@ -23,15 +23,8 @@ export class UserService {
 
   
   checkKerberos(cedula:String, cedula2:String){
-    return this.http.get<string>(`station47:5000/login/${cedula}/${cedula2}`, {observe: 'response'})
-    .subscribe(response => {
+    return this.http.get(`station47:5000/login/${cedula}/${cedula2}`,  {responseType: 'text'})
     
-      // You can access status:
-      console.log(response.status);
-      
-      // Or any other header:
-      console.log(response.headers.get('X-Custom-Header'));
-    });
   }
 
   
