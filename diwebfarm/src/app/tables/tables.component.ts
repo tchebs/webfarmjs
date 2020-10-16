@@ -16,7 +16,7 @@ export class TablesComponent implements OnInit {
     public tableData1: TableData;
     public tableData2: TableData;
     public tableData3: TableData;
-    public responsefromHistory: any;
+    responsefromHistory: any;
 
   constructor(private userservice: UserService, private http:HttpClient) { }
 
