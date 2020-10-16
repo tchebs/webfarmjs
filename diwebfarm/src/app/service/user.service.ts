@@ -54,6 +54,14 @@ export class UserService {
     return temp
   }
 
+  getExistingContainers() {
+    var temp = this.http.get(`http://station51:4444/api/list_sites/aidan`)
+
+    console.log('after history req')
+
+    return temp
+  }
+
   
   
 }

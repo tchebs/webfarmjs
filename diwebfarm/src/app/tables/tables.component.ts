@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'app/service/user.service';
+import { HttpClient } from '@angular/common/http';
 
 declare interface TableData {
     headerRow: string[];
@@ -13,8 +15,10 @@ declare interface TableData {
 export class TablesComponent implements OnInit {
     public tableData1: TableData;
     public tableData2: TableData;
+    public tableData3: TableData;
+    responsefromHistory: any;
 
-  constructor() { }
+  constructor(private userservice: UserService, private http:HttpClient) { }
 
   ngOnInit() {
       this.tableData1 = {
@@ -39,6 +43,28 @@ export class TablesComponent implements OnInit {
               ['6', 'Mason Porter', '$78,615', 'Chile', 'Gloucester' ]
           ]
       };
+
+      this.tableData3 = {
+          headerRow: [ 'ip', 'name', 'path', 'ready', 'total' ],
+          dataRows: [this.loadcontainerdata()]
+      }
+
+      
+
+      
+
+
   }
+  loadcontainerdata() {
+    this.userservice.getExistingContainers()
+    .subscribe(x => this.responsefromHistory=x)
+    
+    
+    console.log(this.responsefromHistory)
+
+    return this.responsefromHistory
+
+  }
+
 
 }
