@@ -56,8 +56,15 @@ export class TablesComponent implements OnInit {
 
   }
   loadcontainerdata() {
+    this.responsefromHistory = {
+        
+            "col1":{"Attribute1": "value1", "Attribute2": "value2", "Attribute3": "value3"},
+            "col2":{"Attribute1": "value4", "Attribute2": "value5", "Attribute3": "value6"}, 
+            "col3":{"Attribute1": "value7", "Attribute2": "value8", "Attribute3": "value9"} 
+        };
+    
     this.userservice.getExistingContainers()
-    .subscribe(x => console.log(x))
+    .subscribe(x => console.log(this.responsefromHistory))
     
     console.log('we have gotten the subscribed data')
     
