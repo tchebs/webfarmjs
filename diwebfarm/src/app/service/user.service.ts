@@ -34,6 +34,16 @@ export class UserService {
     
   }
 
+  checkKubernetes(containerName:String, hostnameDNS:String, numofinstance:any, username:String){
+    console.log('before Container req')
+
+    var temp = this.http.get<string>(`http://station47:5000/login/${hostnameDNS}/${containerName}`)
+
+    console.log('after Container req')
+
+    return temp
+  }
+
   
   
 }
