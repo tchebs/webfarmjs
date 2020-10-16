@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
   imports: [
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule,
     HttpClientModule,
     NavbarModule,

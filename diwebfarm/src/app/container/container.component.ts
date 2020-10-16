@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/service/user.service';
 
 import { Observable } from 'rxjs';
-import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-container',
@@ -17,6 +17,7 @@ export class ContainerComponent implements OnInit {
   private username: string;
   private glusterfs: string;
   responsefromKubernetes: any;
+  name = new FormControl('');
 
 
   constructor(private userservice: UserService, private http:HttpClient) { }
