@@ -34,10 +34,11 @@ export class UserService {
     
   }
 
-  checkKubernetes(containerName:String, hostnameDNS:String, numofinstance:any, username:String){
+  checkKubernetes(containerName:String, numofinstance:any, username:String, glusterfs:String){
     console.log('before Container req')
 
-    var temp = this.http.get<string>(`http://station47:5000/login/${hostnameDNS}/${containerName}`)
+    const body = {app_name: containerName, instance_count: numofinstance, gfs_path: glusterfs, user_name: username}
+    var temp = this.http.post(`http://station51:4444/api/deploy_site/`, body)
 
     console.log('after Container req')
 

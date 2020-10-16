@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/service/user.service';
 
+import { Observable } from 'rxjs';
+import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-container',
@@ -13,7 +15,7 @@ export class ContainerComponent implements OnInit {
   private hostnameDNS: string;
   private numofinstance: any;
   private username: string;
-  private containerfile: any;
+  private glusterfs: string;
   responsefromKubernetes: any;
 
 
@@ -23,7 +25,7 @@ export class ContainerComponent implements OnInit {
   }
 
   loadContainer()  {
-    this.userservice.checkKubernetes(this.containerName, this.hostnameDNS, this.numofinstance, this.username )
+    this.userservice.checkKubernetes(this.containerName, this.glusterfs, this.numofinstance, this.username )
     .subscribe(x => this.responsefromKubernetes=x)
     
     
