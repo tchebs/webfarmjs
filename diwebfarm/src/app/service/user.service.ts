@@ -39,7 +39,7 @@ export class UserService {
     
     const body = {app_name: containerName, instance_count: numofinstance, gfs_path: glusterfs, user_name: username};
     console.log(body)
-    var temp = this.http.post<any>(`http://station51:4444/api/deploy_site`, body)
+    var temp = this.http.post<any>(`http://station51:4444/api/deploy_site`, JSON.stringify(body))
 
     console.log('after Container req')
 
