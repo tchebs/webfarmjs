@@ -19,8 +19,12 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr *ngFor="let row of tableData3.dataRows">
-                                      <td *ngFor="let cell of row">{{cell}}</td>
+                                  <tr *ngFor="let row of responsefromHistory.results">
+                                      <td>{{row.ip}}</td>
+                                      <td>{{row.name}}</td>
+                                      <td>{{row.path}}</td>
+                                      <td>{{row.ready}}</td>
+                                      <td>{{row.total}}</td>
                                   </tr>
                               </tbody>
                         </table>
