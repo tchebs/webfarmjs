@@ -26,7 +26,7 @@ export class ContainerComponent implements OnInit {
   }
 
   loadContainer()  {
-    this.userservice.checkKubernetes(this.containerName, this.glusterfs, this.numofinstance, this.username )
+    this.userservice.checkKubernetes(this.containerName, this.numofinstance, this.username , this.glusterfs )
     .subscribe(x => this.responsefromKubernetes=x)
     
     
