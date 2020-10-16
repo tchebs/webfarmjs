@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -34,12 +34,20 @@ export class UserService {
     
   }
 
-  checkKubernetes(containerName:String, numofinstance:any, username:String, glusterfs:String){
+  checkKubernetes(containerName:string, numofinstance:any, username:string, glusterfs:string){
     console.log('before Container req')
     
     const body = {app_name: containerName, instance_count: numofinstance, gfs_path: glusterfs, user_name: username};
     console.log(body)
-    var temp = this.http.post<any>(`http://station51:4444/api/deploy_site`, JSON.stringify(body))
+
+    let body1 = new HttpParams();
+    body1 = body1.set('app_name', containerName);
+    body1 = body1.set('instance_count', numofinstance);
+    body1 = body1.set('gfs_path', glusterfs);
+    body1 = body1.set('user_name', username);
+
+
+    var temp = this.http.post(`http://station51:4444/api/deploy_site`, body1)
 
     console.log('after Container req')
 
