@@ -57,7 +57,7 @@ export class TablesComponent implements OnInit {
   }
   loadcontainerdata() {
     this.userservice.getExistingContainers()
-    .subscribe(x => this.responsefromHistory=x)
+    .subscribe(x => console.log(x))
     
     console.log('we have gotten the subscribed data')
     
